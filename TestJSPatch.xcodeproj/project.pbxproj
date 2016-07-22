@@ -13,6 +13,10 @@
 		4E06A2A91D3F68F200C87D8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E06A2A71D3F68F200C87D8A /* Main.storyboard */; };
 		4E06A2AB1D3F68F200C87D8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E06A2AA1D3F68F200C87D8A /* Assets.xcassets */; };
 		4E06A2AE1D3F68F200C87D8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E06A2AC1D3F68F200C87D8A /* LaunchScreen.storyboard */; };
+		4E06A2B91D3F699400C87D8A /* JPEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E06A2B71D3F699400C87D8A /* JPEngine.m */; };
+		4E06A2BA1D3F699400C87D8A /* JSPatch.js in Resources */ = {isa = PBXBuildFile; fileRef = 4E06A2B81D3F699400C87D8A /* JSPatch.js */; };
+		4E06A2BD1D3F758900C87D8A /* demo.js in Resources */ = {isa = PBXBuildFile; fileRef = 4E06A2BC1D3F758900C87D8A /* demo.js */; };
+		4EC4BA741D3F7A42006CE8AD /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EC4BA731D3F7A42006CE8AD /* libz.1.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,11 @@
 		4E06A2AA1D3F68F200C87D8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E06A2AD1D3F68F200C87D8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E06A2AF1D3F68F200C87D8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E06A2B61D3F699400C87D8A /* JPEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPEngine.h; sourceTree = "<group>"; };
+		4E06A2B71D3F699400C87D8A /* JPEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPEngine.m; sourceTree = "<group>"; };
+		4E06A2B81D3F699400C87D8A /* JSPatch.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = JSPatch.js; sourceTree = "<group>"; };
+		4E06A2BC1D3F758900C87D8A /* demo.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = demo.js; sourceTree = "<group>"; };
+		4EC4BA731D3F7A42006CE8AD /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libz.1.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EC4BA741D3F7A42006CE8AD /* libz.1.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +52,8 @@
 		4E06A2921D3F68F100C87D8A = {
 			isa = PBXGroup;
 			children = (
+				4EC4BA731D3F7A42006CE8AD /* libz.1.dylib */,
+				4E06A2B51D3F699400C87D8A /* JSPatch */,
 				4E06A29D1D3F68F200C87D8A /* TestJSPatch */,
 				4E06A29C1D3F68F200C87D8A /* Products */,
 			);
@@ -62,6 +74,7 @@
 				4E06A2A21D3F68F200C87D8A /* AppDelegate.m */,
 				4E06A2A41D3F68F200C87D8A /* ViewController.h */,
 				4E06A2A51D3F68F200C87D8A /* ViewController.m */,
+				4E06A2BC1D3F758900C87D8A /* demo.js */,
 				4E06A2A71D3F68F200C87D8A /* Main.storyboard */,
 				4E06A2AA1D3F68F200C87D8A /* Assets.xcassets */,
 				4E06A2AC1D3F68F200C87D8A /* LaunchScreen.storyboard */,
@@ -77,6 +90,17 @@
 				4E06A29F1D3F68F200C87D8A /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4E06A2B51D3F699400C87D8A /* JSPatch */ = {
+			isa = PBXGroup;
+			children = (
+				4E06A2B61D3F699400C87D8A /* JPEngine.h */,
+				4E06A2B71D3F699400C87D8A /* JPEngine.m */,
+				4E06A2B81D3F699400C87D8A /* JSPatch.js */,
+			);
+			name = JSPatch;
+			path = TestJSPatch/JSPatch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -110,6 +134,7 @@
 				TargetAttributes = {
 					4E06A29A1D3F68F200C87D8A = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 7N6K3G2LDT;
 					};
 				};
 			};
@@ -136,8 +161,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E06A2BD1D3F758900C87D8A /* demo.js in Resources */,
 				4E06A2AE1D3F68F200C87D8A /* LaunchScreen.storyboard in Resources */,
 				4E06A2AB1D3F68F200C87D8A /* Assets.xcassets in Resources */,
+				4E06A2BA1D3F699400C87D8A /* JSPatch.js in Resources */,
 				4E06A2A91D3F68F200C87D8A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E06A2A61D3F68F200C87D8A /* ViewController.m in Sources */,
+				4E06A2B91D3F699400C87D8A /* JPEngine.m in Sources */,
 				4E06A2A31D3F68F200C87D8A /* AppDelegate.m in Sources */,
 				4E06A2A01D3F68F200C87D8A /* main.m in Sources */,
 			);
@@ -263,10 +291,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TestJSPatch",
+				);
 				INFOPLIST_FILE = TestJSPatch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.wuwei.imo.testJSPatch.TestJSPatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -274,10 +314,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TestJSPatch",
+				);
 				INFOPLIST_FILE = TestJSPatch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.wuwei.imo.testJSPatch.TestJSPatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -300,6 +352,7 @@
 				4E06A2B41D3F68F200C87D8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
